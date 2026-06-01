@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/*
+  Elite Events LA editorial design system
+  Palette: warm off-white ground, near-black ink for body, dark navy for display.
+  Type: Cormorant Garamond (display serif) + Hanken Grotesk (body grotesque).
+*/
+
+@theme {
+  /* Surfaces */
+  --color-cream: #f4f1ea;
+  --color-cream-deep: #ece6da;
+  --color-card: #faf8f3;
+
+  /* Ink */
+  --color-ink: #22211d; /* barely-lighter off-black, body copy */
+  --color-navy: #16263a; /* dark navy, display + accents */
+  --color-muted: #6f6a60; /* warm taupe-grey, secondary copy */
+  --color-line: #ddd7ca; /* hairline rules */
+
+  /* Type */
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-hanken);
+
+  /* Editorial rhythm */
+  --tracking-eyebrow: 0.22em;
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv05";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: var(--color-cream);
+}
+
+/* Display serif: optical sizing on for large sizes */
+.font-display {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+/* Wide-tracked uppercase eyebrow label */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* Auto-scrolling marquee band (pure CSS; pauses on hover) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-dur, 60s) linear infinite;
+}
+.group:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Thin underline-on-hover link */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-bottom: 1px;
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
