@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getDivision,
   pageDivisions,
+  pillarImages,
   pillars,
   site,
   type AudienceSlug,
@@ -99,12 +101,25 @@ export default async function DivisionPage({
           <p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink/80">
             {division.intro}
           </p>
-          <MediaPlaceholder
-            label={`${division.title} hero image`}
-            ratio="16:9"
-            aspect="aspect-[4/5] sm:aspect-[16/9]"
-            className="mt-12 lg:mt-16"
-          />
+          {division.heroImage ? (
+            <div className="relative mt-12 aspect-[4/5] overflow-hidden sm:aspect-[16/9] lg:mt-16">
+              <Image
+                src={division.heroImage}
+                alt={`${division.title} event by Elite Events LA`}
+                fill
+                priority
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <MediaPlaceholder
+              label={`${division.title} hero image`}
+              ratio="16:9"
+              aspect="aspect-[4/5] sm:aspect-[16/9]"
+              className="mt-12 lg:mt-16"
+            />
+          )}
         </Container>
       </section>
 
@@ -139,17 +154,26 @@ export default async function DivisionPage({
             {pillars.map((p, i) => {
               const imageRight = i % 2 === 0;
               const examples = p.examples[audience];
+              const img = pillarImages[audience]?.[p.id];
               return (
                 <div
                   key={p.id}
                   className="grid items-center gap-10 md:grid-cols-2 lg:gap-16"
                 >
                   <div className={imageRight ? "md:order-2" : "md:order-1"}>
-                    <MediaPlaceholder
-                      label={p.title}
-                      ratio="4:5"
-                      aspect="aspect-[4/5]"
-                    />
+                    {img ? (
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <Image
+                          src={img}
+                          alt={`${p.title} for ${division.title.toLowerCase()} events by Elite Events LA`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <MediaPlaceholder label={p.title} ratio="4:5" aspect="aspect-[4/5]" />
+                    )}
                   </div>
                   <div className={imageRight ? "md:order-1" : "md:order-2"}>
                     <span className="font-display text-sm text-muted">

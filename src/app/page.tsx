@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { divisions, pageDivisions, signatureDivisions, site } from "@/lib/content";
-import { ArrowLink, Container, Eyebrow, MediaPlaceholder } from "@/components/primitives";
+import { ArrowLink, Container, Eyebrow } from "@/components/primitives";
 import { JsonLd } from "@/components/json-ld";
 
 export default function HomePage() {
@@ -92,12 +92,15 @@ export default function HomePage() {
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-3">
             {pageDivisions.map((d) => (
               <Link key={d.slug} href={`/${d.slug}`} className="group block">
-                <MediaPlaceholder
-                  label={d.title}
-                  ratio="4:5"
-                  aspect="aspect-[4/5]"
-                  className="transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[0.99]"
-                />
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    src={`/cards/${d.slug}.webp`}
+                    alt={`${d.title} events by Elite Events LA`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  />
+                </div>
                 <Eyebrow className="mt-7">{d.eyebrow}</Eyebrow>
                 <h3 className="font-display mt-3 text-2xl text-navy">
                   <span className="link-underline">{d.title}</span>

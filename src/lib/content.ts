@@ -15,8 +15,8 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Corporate", href: "/corporate" },
   { label: "Personal", href: "/personal" },
+  { label: "Corporate", href: "/corporate" },
   { label: "Weddings", href: "/weddings" },
   { label: "Rental Catalog", href: "/rentals" },
   { label: "About", href: "/about" },
@@ -42,6 +42,8 @@ export type ServiceDivision = {
   note?: { heading: string; body: string };
   /** event types shown in the scrolling banner above the pillars */
   eventTypes?: readonly string[];
+  /** optional wide hero image (falls back to a placeholder if absent) */
+  heroImage?: string;
   hasPage: boolean;
 };
 
@@ -55,6 +57,7 @@ export const divisions: ServiceDivision[] = [
     intro:
       "From product launches and conferences to holiday parties and private client dinners, we plan corporate events that feel as polished as the brand behind them. You stay focused on the room; we hold everything around it.",
     servicesHeading: "The solution to your organization's Los Angeles-based event.",
+    heroImage: "/heroes/corporate-banquet.webp",
     eventTypes: [
       "Product Launches",
       "Conferences",
@@ -92,6 +95,7 @@ export const divisions: ServiceDivision[] = [
     intro:
       "The best celebrations feel effortless because someone took care of everything you didn't see. We design and run personal events of every shape, from an intimate dinner to a fully themed party, so you get to be a guest at your own celebration.",
     servicesHeading: "Everything your *personal* celebration needs, in one place.",
+    heroImage: "/heroes/personal-celebrate.webp",
     eventTypes: [
       "Birthday Parties",
       "Baby Showers",
@@ -131,6 +135,7 @@ export const divisions: ServiceDivision[] = [
     intro:
       "We plan the day with the calm attention it deserves. Design, logistics, and every vendor are handled so the two of you can stay in the moment. The same care extends to life's other milestones, including baby celebrations and dog parties.",
     servicesHeading: "Everything the day needs, beautifully handled.",
+    heroImage: "/heroes/weddings-beach.webp",
     eventTypes: [
       "Weddings",
       "Micro Weddings",
@@ -148,8 +153,6 @@ export const divisions: ServiceDivision[] = [
       "Receptions",
       "Day-After Brunches",
       "Anniversary Celebrations",
-      "Baby Celebrations",
-      "Dog Parties",
     ],
     note: {
       heading: "Beyond the wedding",
@@ -316,6 +319,38 @@ export const pillars: Pillar[] = [
     },
   },
 ];
+
+/**
+ * Per-audience pillar imagery. Keyed by audience, then pillar id. Only the
+ * audiences/pillars with generated images appear here; everything else falls
+ * back to a placeholder.
+ */
+export const pillarImages: Partial<Record<AudienceSlug, Record<string, string>>> = {
+  corporate: {
+    planning: "/pillars/corporate/planning.webp",
+    design: "/heroes/corporate-keynote.webp",
+    media: "/pillars/corporate/media-team.webp",
+    experiences: "/pillars/corporate/experiences-handoff-branded.webp",
+    vendors: "/pillars/corporate/vendors-buffet.webp",
+    logistics: "/pillars/corporate/logistics-radio.webp",
+  },
+  personal: {
+    planning: "/pillars/personal/planning.webp",
+    design: "/pillars/personal/design-teams.webp",
+    media: "/pillars/personal/media.webp",
+    experiences: "/pillars/personal/experiences.webp",
+    vendors: "/pillars/personal/vendors-daniel.webp",
+    logistics: "/pillars/personal/logistics.webp",
+  },
+  weddings: {
+    planning: "/pillars/weddings/planning.webp",
+    design: "/pillars/weddings/design.webp",
+    media: "/pillars/weddings/media.webp",
+    experiences: "/pillars/weddings/experiences.webp",
+    vendors: "/pillars/weddings/vendors-chairs.webp",
+    logistics: "/pillars/weddings/logistics.webp",
+  },
+};
 
 /**
  * Rental Catalog: our in-house inventory, available for any event.
