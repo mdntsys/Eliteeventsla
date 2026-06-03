@@ -10,7 +10,7 @@ import {
   site,
   type AudienceSlug,
 } from "@/lib/content";
-import { ArrowLink, Container, Eyebrow, MediaPlaceholder, Rule } from "@/components/primitives";
+import { ArrowLink, Container, MediaPlaceholder, Rule } from "@/components/primitives";
 import { JsonLd } from "@/components/json-ld";
 import { Marquee } from "@/components/marquee";
 
@@ -92,13 +92,15 @@ export default async function DivisionPage({
       <JsonLd data={serviceLd} />
 
       {/* Hero */}
-      <section className="pt-16 lg:pt-24">
+      <section className="pt-6 lg:pt-10">
         <Container>
-          <Eyebrow>{division.eyebrow}</Eyebrow>
-          <h1 className="font-display mt-5 text-[clamp(2.75rem,6.5vw,6rem)] font-light leading-[1.03] tracking-[-0.01em] text-navy">
+          <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] font-light leading-[1.03] tracking-[-0.01em] text-navy">
             {division.title}
           </h1>
-          <p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink/80">
+          <p className="font-display mt-6 max-w-2xl text-2xl font-light leading-snug text-navy sm:text-3xl">
+            {withEmphasis(servicesHeading)}
+          </p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/75">
             {division.intro}
           </p>
           {division.heroImage ? (
@@ -123,34 +125,20 @@ export default async function DivisionPage({
         </Container>
       </section>
 
-      {/* Event types: scrolling banner of what we plan for this audience */}
+      {/* Event-types carousel: full-bleed ticker directly under the hero */}
       {division.eventTypes && (
-        <section className="pt-10 lg:pt-14">
-          <Container>
-            <Eyebrow>Events we plan</Eyebrow>
-          </Container>
-          <Marquee items={division.eventTypes} className="mt-6" />
-        </section>
+        <Marquee items={division.eventTypes} className="mt-14 lg:mt-20" />
       )}
 
       {/* Pillars: same six capabilities, framed for this audience */}
-      <section className="pb-24 pt-12 lg:pb-32 lg:pt-16">
+      <section className="pb-24 pt-20 lg:pb-32 lg:pt-28">
         <Container>
-          <div className="max-w-3xl">
-            <Eyebrow>Our six pillars</Eyebrow>
-            <h2 className="font-display mt-4 text-3xl font-light leading-tight text-navy sm:text-4xl">
-              {withEmphasis(servicesHeading)}
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Every event we take on is built on the same six pillars. It&apos;s a
-              deliberate framework. We bring the same rigor and standard of care
-              whether we&apos;re producing a corporate launch, a backyard
-              celebration, or a wedding, so nothing is left to chance, and nothing
-              falls to you.
-            </p>
-          </div>
+          <h2 className="font-display max-w-3xl text-3xl font-light leading-tight text-navy sm:text-4xl">
+            {withEmphasis(division.pillarsLead ?? servicesHeading)}
+          </h2>
+          <Rule className="mt-8 max-w-3xl" />
 
-          <div className="mt-16 space-y-20 lg:mt-24 lg:space-y-28">
+          <div className="mt-12 space-y-20 lg:mt-16 lg:space-y-28">
             {pillars.map((p, i) => {
               const imageRight = i % 2 === 0;
               const examples = p.examples[audience];

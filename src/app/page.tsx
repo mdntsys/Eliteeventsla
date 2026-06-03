@@ -49,7 +49,7 @@ export default function HomePage() {
           <div className="mt-12 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <ArrowLink href="#worlds">Explore services</ArrowLink>
             <p className="max-w-xl text-lg leading-relaxed text-ink/80">
-              Elite Events LA plans, styles, and runs events across Los Angeles and
+              At Elite Events, we plan, style, and run events across Los Angeles and
               surrounding areas: corporate gatherings, personal celebrations, and weddings. From the
               first idea to the last chair folded, we carry the details that don&apos;t
               belong on your plate, so the day feels like yours.
@@ -58,27 +58,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ───────────────────── Philosophy statement ───────────────────── */}
-      <section className="py-28 lg:py-40">
-        <Container>
-          <div className="grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-3">
-              <Eyebrow>Our approach</Eyebrow>
-            </div>
-            <div className="md:col-span-9">
-              <p className="font-display text-[clamp(1.75rem,3.4vw,3rem)] font-light leading-[1.22] text-navy text-pretty">
-                We believe the people throwing the party should get to enjoy it too.
-                So we take on everything around the moment: the planning, the
-                vendors, the timeline, the quiet problem-solving. Then we hand you
-                back the part that matters, <em className="italic">being there.</em>
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* ───────────────────────── Worlds ───────────────────────── */}
-      <section id="worlds" className="scroll-mt-28 py-8">
+      <section id="worlds" className="scroll-mt-28 pt-28 pb-12 lg:pt-40">
         <Container>
           <div className="mb-14 flex items-end justify-between gap-6">
             <div>
@@ -108,6 +89,26 @@ export default function HomePage() {
                 <p className="mt-3 max-w-sm leading-relaxed text-ink/75">{d.summary}</p>
               </Link>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ───────────────────── Our approach ───────────────────── */}
+      <section className="py-24 lg:py-32">
+        <Container>
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <Eyebrow>Our approach</Eyebrow>
+            </div>
+            <div className="md:col-span-9">
+              <p className="font-display text-[clamp(1.75rem,3.4vw,3rem)] font-light leading-[1.22] text-navy text-pretty">
+                Every event we take on is built on the same{" "}
+                <em className="italic">six pillars</em>. It&apos;s a deliberate
+                framework. We bring the same precision and standard of care whether
+                we&apos;re producing a backyard celebration, a corporate launch, or a
+                wedding, so every detail is handled and nothing is left to chance.
+              </p>
+            </div>
           </div>
         </Container>
       </section>

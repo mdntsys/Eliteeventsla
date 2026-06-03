@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site } from "@/lib/content";
-import { ArrowLink, Container, Eyebrow, MediaPlaceholder } from "@/components/primitives";
+import { ArrowLink, Container, Eyebrow } from "@/components/primitives";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,16 +12,16 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    title: "Warmth first",
-    body: "Every event belongs to someone. We plan around the people in the room and the feeling you want them to leave with.",
+    title: "Listen",
+    body: "We start by understanding the occasion, the people, and the outcome you want. Everything we plan flows from there.",
   },
   {
-    title: "Quiet precision",
-    body: "The best logistics are invisible. We sweat the timeline, the vendors, and the contingencies so the day feels easy.",
+    title: "Plan",
+    body: "We build the timeline, line up the vendors, and pressure-test every contingency before the day arrives.",
   },
   {
-    title: "One point of calm",
-    body: "You get one team that carries it all, from first idea to final breakdown, so nothing falls between the cracks.",
+    title: "Execute",
+    body: "On the day, we run it end to end so it unfolds exactly as planned and you never have to step in.",
   },
 ];
 
@@ -28,29 +29,30 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 lg:pt-28">
+      <section className="pt-6 lg:pt-10">
         <Container>
           <Eyebrow>About</Eyebrow>
           <h1 className="font-display mt-8 max-w-4xl text-balance text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[1.05] tracking-[-0.01em] text-navy">
             We&apos;re the team behind the day you&apos;ll remember.
           </h1>
-          <div className="mt-12 grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-3" />
-            <p className="md:col-span-9 max-w-2xl text-xl leading-relaxed text-ink/80">
-              Elite Events LA is a full-service event studio serving Los Angeles
-              and surrounding areas. We plan, design, and run events of every kind,
-              from corporate gatherings to personal celebrations and weddings, for
-              people whose calendars are full and whose moments deserve real care. We
-              started with a simple conviction: the people throwing the party should
-              get to enjoy it too.
-            </p>
+          <p className="mt-12 max-w-2xl text-xl leading-relaxed text-ink/80">
+            Elite Events is a full-service event company serving Los Angeles
+            and surrounding areas. We plan, design, and run events of every kind,
+            from corporate gatherings to personal celebrations and weddings, for
+            people whose calendars are full and whose moments deserve real care. We
+            started with a simple conviction: the people throwing the party should
+            get to enjoy it too.
+          </p>
+          <div className="relative mt-12 aspect-[16/9] overflow-hidden lg:mt-16">
+            <Image
+              src="/about/hero-gpt.webp"
+              alt="Elite Events LA branded box truck loading event gear at the studio facility"
+              fill
+              priority
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              className="object-cover"
+            />
           </div>
-          <MediaPlaceholder
-            label="Studio portrait"
-            ratio="16:9"
-            aspect="aspect-[4/5] sm:aspect-[16/9]"
-            className="mt-12 lg:mt-16"
-          />
         </Container>
       </section>
 
@@ -78,9 +80,9 @@ export default function AboutPage() {
               <Eyebrow>Our promise</Eyebrow>
             </div>
             <p className="md:col-span-9 font-display text-[clamp(1.75rem,3.4vw,3rem)] font-light leading-[1.22] text-navy text-pretty">
-              Whatever the occasion, we hold the details that don&apos;t belong on your
-              plate, so when the day arrives, you can stop managing and start{" "}
-              <em className="italic">celebrating.</em>
+              We carry the complexity behind every event, delivering seamless
+              execution so you can experience the moment without{" "}
+              <em className="italic">distraction.</em>
             </p>
           </div>
         </Container>

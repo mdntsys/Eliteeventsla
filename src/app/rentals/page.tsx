@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { pageDivisions, rentals, site } from "@/lib/content";
-import { ArrowLink, Container, Eyebrow, MediaPlaceholder, Rule } from "@/components/primitives";
+import { ArrowLink, Container, Eyebrow, Rule } from "@/components/primitives";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function RentalsPage() {
       <JsonLd data={serviceLd} />
 
       {/* Hero */}
-      <section className="pt-16 lg:pt-24">
+      <section className="pt-6 lg:pt-10">
         <Container>
           <Eyebrow>{rentals.eyebrow}</Eyebrow>
           <h1 className="font-display mt-5 text-[clamp(2.75rem,6.5vw,6rem)] font-light leading-[1.03] tracking-[-0.01em] text-navy">
@@ -52,7 +53,15 @@ export default function RentalsPage() {
           <div className="mt-12 grid gap-x-10 gap-y-16 sm:grid-cols-2">
             {rentals.categories.map((c) => (
               <div key={c.name}>
-                <MediaPlaceholder label={c.name} ratio="4:5" aspect="aspect-[4/5]" />
+                <div className="relative aspect-[4/5] overflow-hidden border border-line bg-white">
+                  <Image
+                    src={c.image}
+                    alt={`${c.name} for event rentals by Elite Events LA`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="font-display mt-7 text-2xl text-navy sm:text-3xl">{c.name}</h2>
                 <p className="mt-3 max-w-sm leading-relaxed text-ink/75">{c.description}</p>
               </div>

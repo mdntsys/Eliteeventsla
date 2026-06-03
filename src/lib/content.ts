@@ -38,6 +38,8 @@ export type ServiceDivision = {
   intro?: string;
   /** heading above the pillars on the audience page */
   servicesHeading?: string;
+  /** short one-line lead shown under the "Our six pillars" eyebrow */
+  pillarsLead?: string;
   /** optional callout shown after the pillars (e.g. weddings: baby & dog) */
   note?: { heading: string; body: string };
   /** event types shown in the scrolling banner above the pillars */
@@ -55,8 +57,9 @@ export const divisions: ServiceDivision[] = [
     summary:
       "Considered, on-brand experiences your guests remember and your team never has to chase.",
     intro:
-      "From product launches and conferences to holiday parties and private client dinners, we plan corporate events that feel as polished as the brand behind them. You stay focused on the room; we hold everything around it.",
+      "From product launches and conferences to holiday parties and private client dinners, we plan corporate events that feel as polished as the brand behind them. Every detail is handled behind the scenes, so your brand is the only thing on display.",
     servicesHeading: "The solution to your organization's Los Angeles-based event.",
+    pillarsLead: "Six pillars. One standard. Every event.",
     heroImage: "/heroes/corporate-banquet.webp",
     eventTypes: [
       "Product Launches",
@@ -95,6 +98,7 @@ export const divisions: ServiceDivision[] = [
     intro:
       "The best celebrations feel effortless because someone took care of everything you didn't see. We design and run personal events of every shape, from an intimate dinner to a fully themed party, so you get to be a guest at your own celebration.",
     servicesHeading: "Everything your *personal* celebration needs, in one place.",
+    pillarsLead: "Six pillars. One standard. Every celebration.",
     heroImage: "/heroes/personal-celebrate.webp",
     eventTypes: [
       "Birthday Parties",
@@ -133,9 +137,10 @@ export const divisions: ServiceDivision[] = [
     summary:
       "Weddings, plus baby and dog celebrations. The days that mark a new chapter, held with care.",
     intro:
-      "We plan the day with the calm attention it deserves. Design, logistics, and every vendor are handled so the two of you can stay in the moment. The same care extends to life's other milestones, including baby celebrations and dog parties.",
+      "We plan the day with the calm attention it deserves. We handle the design, the logistics, and every vendor, so the two of you can stay in the moment. Everything we do serves one goal: to create a day that feels seamless, joyful, and unforgettable, for you and your loved ones.",
     servicesHeading: "Everything the day needs, beautifully handled.",
-    heroImage: "/heroes/weddings-beach.webp",
+    pillarsLead: "Six pillars, one beautifully run day.",
+    heroImage: "/heroes/weddings-beach-gazebo-runner.webp",
     eventTypes: [
       "Weddings",
       "Micro Weddings",
@@ -214,11 +219,11 @@ export const pillars: Pillar[] = [
     title: "Planning & Coordination",
     detail: {
       corporate:
-        "From kickoff to load-out, we run the plan for launches, conferences, galas, and client dinners, managing the timeline, the budget, and every vendor so your team can stay focused on the room.",
+        "From the first kickoff call to the final load-out, we run the program so your team can stay present in the room. We carry the timeline, the budget, and every vendor conversation, and we keep a clear line of accountability for each moving part. You receive one point of contact and a plan detailed enough that nothing is left to chance.",
       personal:
-        "We hold the whole plan for your celebration: the schedule, the vendors, the day-of details. We can also place a dedicated coordinator on site so you get to be a guest at your own party.",
+        "We hold the whole plan for your celebration: the schedule, the vendors, the day-of details. Long before your first guest arrives, the day is mapped to the minute and every what-if is already accounted for. We can even place a dedicated coordinator on site to run it in real time, so you feel none of that work and simply enjoy the people you invited.",
       weddings:
-        "Full wedding planning and day-of coordination, from the engagement to the send-off, with a lead coordinator running the day so the two of you stay in the moment.",
+        "From the engagement to the last dance, we carry the full arc of your wedding, shaping a timeline that holds vendors, family, and the small rituals that matter to you. A lead coordinator runs the day quietly in the background, anticipating each transition before it arrives. The two of you are free to be fully present, which is the only thing the day really asks of you.",
     },
     examples: {
       corporate: ["Full-service planning", "Day-of coordination", "On-site staff"],
@@ -231,11 +236,11 @@ export const pillars: Pillar[] = [
     title: "Design & Styling",
     detail: {
       corporate:
-        "Branded environments that match your identity exactly, from signage and printed pieces to staging and styled spaces that look as considered as the brand behind them.",
+        "We build branded environments that read as an extension of your identity, so every surface a guest touches feels intentional and on brand. Signage, printed pieces, staging, and styled spaces are produced to the same standard your marketing team would demand. The result looks considered from the entrance to the smallest detail, because it is.",
       personal:
-        "Decorations and fully realized themes designed around your occasion, from an intimate palette to a top-to-bottom themed set-up, plus florals and canopies to shape the space.",
+        "Decorations and fully realized themes designed around your occasion, from an intimate palette to a top-to-bottom themed set-up, with florals and canopies to shape the space. We obsess over the details most people never name: the weight of a linen, the height of a centerpiece, the way the light falls at golden hour. Together, they turn a venue into your celebration.",
       weddings:
-        "A cohesive design across florals, tabletop, stationery, and the whole environment, all romantic, refined, and unmistakably yours.",
+        "We build one cohesive visual language across florals, tabletop, stationery, and the rooms themselves, so every element feels drawn from the same story rather than assembled. The palette, textures, and proportions are chosen to reflect who you are as a couple, never a trend borrowed from elsewhere. The result is romantic, refined, and unmistakably yours, from the first invitation to the final tablescape.",
     },
     examples: {
       corporate: ["Custom branding", "Signage", "Staging & styling"],
@@ -248,11 +253,11 @@ export const pillars: Pillar[] = [
     title: "Media & Content",
     detail: {
       corporate:
-        "Photo, video, and content capture built for the brand, including recap films, social content, and assets your team can use long after the lights come up.",
+        "We capture photo, video, and content shaped around how your brand actually shows up in the world. A team works the room with purpose, gathering the moments that matter to leadership, to your audience, and to the story you want to tell next. You leave with assets ready to publish, repurpose, and share for months afterward.",
       personal:
-        "Photo and video coverage to keep the day exactly as it felt, plus shareable content for everyone who was there.",
+        "Photo and film coverage that holds onto the day as you actually lived it, the quiet glances and the loud ones alike. You stay present in the room while we capture it, so nothing real has to pause for the lens. Weeks later, it lands back with you, ready to relive and to pass along to everyone who was there.",
       weddings:
-        "Timeless photography and film of the day, the moments you'll return to for years.",
+        "We pair you with photographers and filmmakers whose instinct is to observe rather than direct, capturing the day as it genuinely unfolds. The glances, the quiet asides, the laughter between the vows are what they are watching for. Years from now, these are the images and films that let you feel the day again, exactly as it was.",
     },
     examples: {
       corporate: ["Event photography", "Recap video", "Branded content"],
@@ -265,11 +270,11 @@ export const pillars: Pillar[] = [
     title: "Experiences & Entertainment",
     detail: {
       corporate:
-        "Brand activations and guest experiences that get people engaged, from interactive stations and photo moments to entertainment tuned to your audience.",
+        "We design activations and guest experiences that invite genuine participation rather than polite attendance. Each touchpoint is built around your audience and your message, so people remember how the event felt long after they leave the floor. The best of them spark conversation that carries into the days and weeks that follow.",
       personal:
-        "The fun stuff: photo booths, permanent jewelry, live cartoon artists, a flower bar, soft play for the little ones, and custom baked goods and treats.",
+        "The moments that make people linger and laugh, woven through your day so there is always something to discover. Each one is chosen for your crowd, whether you are delighting small children or charming a room of old friends. They give guests something to do with their hands and a story to carry home, long after the last toast.",
       weddings:
-        "Memorable guest experiences and favors, from photo moments and permanent jewelry to a flower bar, sweets, and entertainment that fits the celebration.",
+        "We design the moments your guests carry home, woven naturally through the celebration rather than staged on the side. Each touch is chosen to suit your particular gathering and the people in it, so nothing feels generic or imported from someone else's wedding. The intent is simple: to leave everyone, including the two of you, with something to remember.",
     },
     examples: {
       corporate: ["Brand activations", "Photo experiences", "Entertainment"],
@@ -289,11 +294,11 @@ export const pillars: Pillar[] = [
     title: "Vendors & Rentals",
     detail: {
       corporate:
-        "Access to our trusted network of caterers, venues, and specialists, all vetted, booked, and managed, plus rentals sourced and delivered as a single, seamless order.",
+        "We open our trusted network of caterers, venues, and specialists, each one vetted against the standard your event deserves. We negotiate, book, and manage every relationship, then consolidate rentals into a single coordinated order so nothing arrives late or unaccounted for. You work with us, and we hold everyone else to account.",
       personal:
-        "The right people and pieces for your party, including vendors we trust and a deep in-house rental inventory of tables, chairs, linen, and more, all handled for you.",
+        "The right people and pieces, gathered so you never chase a single phone call. We pair you with makers we have worked beside for years and draw on our own inventory, which means fewer strangers on site and one team answering to you. Everything arrives, fits, and works, because we have already vetted it long before your date.",
       weddings:
-        "Curated vendors and rentals for the whole day, sourced, coordinated, and managed so nothing is left to chance.",
+        "We assemble a trusted circle of artisans and suppliers whose work meets our standard and whose temperament suits yours, then manage every contract, deposit, and detail on your behalf. These are relationships built over years, not names pulled from a directory. By the wedding morning, every promise has been confirmed and nothing is left to chance.",
     },
     examples: {
       corporate: ["Vendor access", "Rental management"],
@@ -306,11 +311,11 @@ export const pillars: Pillar[] = [
     title: "Logistics & Concierge",
     detail: {
       corporate:
-        "Pre-event load-in, on-site management, and post-event breakdown, plus on-demand concierge and pick-ups so a missing piece never becomes your problem.",
+        "We own the physical reality of the event, from load-in through breakdown, so the schedule holds even when something unexpected surfaces. A dedicated team stays on site to solve problems before they reach you, with concierge support and pick-ups handled quietly in the background. Whatever the room needs, we make it appear.",
       personal:
-        "We handle the logistics before, during, and after, including deliveries, set-up, day-of run of show, and an on-demand concierge for last-minute errands and pick-ups.",
+        "The quiet machinery of the day, run so completely that you never see it move. We carry the heavy lifting and the small surprises alike, smoothing the gap between what you pictured and what unfolds in the room. If something is forgotten or runs short, we have already solved it before you would ever think to ask.",
       weddings:
-        "Pre-, on-site, and post-wedding logistics, with a concierge on call for the day so every detail lands and nothing falls to you.",
+        "Behind the beauty sits a precise operation: deliveries timed, spaces transformed, and everything restored once the last guest has gone. We hold every moving piece so the seams never show and the work never reaches you. A concierge stays on call throughout, ready to resolve the unexpected before it ever becomes yours to notice.",
     },
     examples: {
       corporate: ["Pre / on-site / post", "Concierge & pick-ups"],
@@ -336,11 +341,11 @@ export const pillarImages: Partial<Record<AudienceSlug, Record<string, string>>>
   },
   personal: {
     planning: "/pillars/personal/planning.webp",
-    design: "/pillars/personal/design-teams.webp",
+    design: "/pillars/personal/design-reveal-table.webp",
     media: "/pillars/personal/media.webp",
     experiences: "/pillars/personal/experiences.webp",
     vendors: "/pillars/personal/vendors-daniel.webp",
-    logistics: "/pillars/personal/logistics.webp",
+    logistics: "/pillars/personal/logistics-truck.webp",
   },
   weddings: {
     planning: "/pillars/weddings/planning.webp",
@@ -348,7 +353,7 @@ export const pillarImages: Partial<Record<AudienceSlug, Record<string, string>>>
     media: "/pillars/weddings/media.webp",
     experiences: "/pillars/weddings/experiences.webp",
     vendors: "/pillars/weddings/vendors-chairs.webp",
-    logistics: "/pillars/weddings/logistics.webp",
+    logistics: "/pillars/weddings/logistics-list.webp",
   },
 };
 
@@ -368,18 +373,22 @@ export const rentals = {
     {
       name: "Tables & Umbrellas",
       description: "Dining, cocktail, and accent tables, with shade for any outdoor setting.",
+      image: "/rentals/tables-umbrellas.webp",
     },
     {
       name: "Chairs",
       description: "Seating for ceremonies, dinners, and lounges, across a range of styles.",
+      image: "/rentals/chairs.webp",
     },
     {
       name: "Linen",
       description: "Tablecloths, napkins, and runners to set the tone of the room.",
+      image: "/rentals/linen.webp",
     },
     {
       name: "Tents & Canopies",
       description: "Coverage and structure that shape a space and weather the day.",
+      image: "/rentals/tents-canopies.webp",
     },
   ],
 } as const;

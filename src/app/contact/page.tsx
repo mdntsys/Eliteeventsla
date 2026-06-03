@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 lg:pt-28">
+      <section className="pt-6 lg:pt-10">
         <Container>
           <Eyebrow>Contact</Eyebrow>
           <h1 className="font-display mt-8 max-w-4xl text-balance text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[1.05] tracking-[-0.01em] text-navy">
@@ -29,7 +29,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form, with contact details underneath */}
-      <section className="py-20 lg:py-28">
+      <section className="pt-12 pb-4 lg:pt-16">
         <Container>
           <div className="max-w-3xl">
             <InquiryForm />
